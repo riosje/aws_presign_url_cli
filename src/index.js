@@ -22,6 +22,9 @@ program.description('Create a presigned URL for S3 to Get, Upload or Delete an o
       if (typeof(opts.key) !== 'string' ) {
         throw new Error('Object key must be a string');
       }
+      if (typeof(opts.method) !== 'string' && (opts.method.toUpperCase() !== 'GET' && opts.method.toUpperCase() !== 'PUT' && opts.method.toUpperCase() !== 'DELETE')) {
+        throw new Error('Object method must be a string and contain a valid method (GET PUT DELETE)');
+      }
       opts.expiration = parseInt(opts.expiration);
       if (typeof(opts.expiration) !== 'number' || isNaN(opts.expiration) ) {
         throw new Error('expiration must be a number :');
