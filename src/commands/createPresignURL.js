@@ -15,13 +15,13 @@ export default async function presignURL({bucket, key, expiration, method, regio
 
     // Define Method
     let command
-    if (method === 'GET') {
+    if (method.toUpperCase() === 'GET') {
         command = new GetObjectCommand(bucketParams);
     }
-    else if (method === 'PUT') {
+    else if (method.toUpperCase() === 'PUT') {
         command = new PutObjectCommand(bucketParams);
     }
-    else if (method === 'DELETE') {
+    else if (method.toUpperCase() === 'DELETE') {
         command = new DeleteBucketCommand(bucketParams);
     }
     const putCommand = new PutObjectCommand(bucketParams);
