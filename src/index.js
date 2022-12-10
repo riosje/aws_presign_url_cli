@@ -22,10 +22,15 @@ program.description('Create a presigned URL for S3 to Get, Upload or Delete an o
       if (typeof(opts.key) !== 'string' ) {
         throw new Error('Object key must be a string');
       }
-      if (typeof(opts.expiration) !== 'string' ) {
+      opts.expiration = parseInt(opts.expiration);
+      if (typeof(opts.expiration) !== 'number' || isNaN(opts.expiration) ) {
         throw new Error('expiration must be a number :');
       }
-      await presignURL({bucket: opts.bucket, key: opts.key, expiration: opts.expiration, method: opts.method, region: opts.region});
+        try {
+          await presignURL({bucket: opts.bucket, key: opts.key, expiration: opts.expiration, method: opts.method, region: opts.region});
+        } catch (error) {
+          console.error(error);
+        }
     }
   );
 
