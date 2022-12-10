@@ -1,6 +1,6 @@
 {
   "name": "aws_presign_url_cli",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "cli to create presign URLs to Download or Upload files within an AWS S3 Bucket",
   "main": "index.js",
   "bin": {
