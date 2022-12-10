@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <form>
+        <img src="./logo.svg" alt="logo">
+        <br />
+        <label for="url">Upoload file with S3 presignedURL</label>
+        <input type="text" id="url" placeholder="Enter the URL to upload the file" required>
+        <br />
+        <input type="file" id="file" required>
+        <br />
+        <div class="progress-bar-container">
+          <div class="progress-bar" style="width: 0%"></div>
+        </div>
+      
+        <input type="submit" value="Upload">
+      
+        <div class="notification"></div>
+      </form>
+      <script src="./script.js"></script>
+      <div class="footer">
+        <p>Footer</p>
+      </div>
+</body>
+</html>
