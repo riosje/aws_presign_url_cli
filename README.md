@@ -19,6 +19,11 @@ Full example
 aws_presign_url_cli -b my_bucket -k "key/objectToUpload.zip" -e 50000 -m "PUT"
 ```
 
+Upload a file with CURL using the presigned URL
+```SHELL
+curl ${PRESIGNED_URL} --upload-file key/objectToUpload.zip
+```
+
 ## CLI AVAILABLE OPTIONS
 |DESCRIPTION                                  |REQUIRED|PARAMETERS          |DEFAULT VALUE |DATA TYPE|
 |---------------------------------------------|----------|------------------|--------------|---------|
